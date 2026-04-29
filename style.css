@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #e9ecef;
+    min-height: 100vh;
+    padding: 30px 20px;
+}
+
+.app-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    flex: 1;
+    min-width: 300px;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 22px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #007bff;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 14px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.1);
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #f0f0f0;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-weight: normal;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background: #e0e0e0;
+}
+
+button.primary {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+button.primary:hover {
+    background: #0056b3;
+}
+
+.message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    text-align: center;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+.difficulty-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.difficulty-buttons button {
+    margin-bottom: 0;
+    font-size: 13px;
+    padding: 8px;
+}
+
+.active-diff {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.order-summary {
+    margin-top: 20px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    padding: 12px;
+    border: 1px solid #dee2e6;
+}
+
+.order-summary h4 {
+    margin-bottom: 10px;
+    color: #007bff;
+    font-size: 14px;
+}
+
+.order-summary p {
+    font-size: 13px;
+    margin: 5px 0;
+}
+
+.highlight-effect {
+    animation: pulse 0.6s ease;
+}
+
+@keyframes pulse {
+    0% { background: white; }
+    50% { background: #e8f0fe; }
+    100% { background: white; }
+}
+
+.hidden-box {
+    background: #ffc107;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 15px;
+    transition: all 0.3s;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.hidden-box.hide {
+    display: none;
+}
+
+.toggle-visibility-btn {
+    background: #fd7e14;
+    color: white;
+    margin-top: 10px;
+    border-color: #fd7e14;
+}
+
+.toggle-visibility-btn:hover {
+    background: #e06c0a;
+}
+
+input:invalid {
+    border-color: #dc3545;
+}
+
+input:valid {
+    border-color: #28a745;
+}
+
+.callback-note {
+    font-size: 11px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.error-msg {
+    color: #dc3545;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #6c757d;
+    font-size: 12px;
+}
+
+@media (max-width: 900px) {
+    .app-container {
+        flex-direction: column;
+    }
+}

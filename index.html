@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Угадай число + Формы заказа</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-container">
+    <!-- БЛОК 1: Форма заказа продукта -->
+    <div class="card" id="orderFormCard">
+        <h2>Заказ еды</h2>
+        <form id="productOrderForm">
+            <div class="input-group">
+                <label>Ваше имя *</label>
+                <input type="text" id="customerName" placeholder="Иван Иванов" autocomplete="off">
+                <div class="error-msg" id="nameError"></div>
+            </div>
+
+            <div class="input-group">
+                <label>Телефон *</label>
+                <input type="tel" id="customerPhone" placeholder="+7 (999) 123-45-67" autocomplete="off">
+                <div class="error-msg" id="phoneError"></div>
+            </div>
+
+            <div class="input-group">
+                <label>Выберите блюдо *</label>
+                <select id="productSelect">
+                    <option value="">-- Выберите --</option>
+                    <option value="Калифорния ролл">Калифорния ролл (650 руб)</option>
+                    <option value="Филадельфия">Филадельфия (750 руб)</option>
+                    <option value="Пепперони пицца">Пепперони пицца (590 руб)</option>
+                    <option value="Маргарита">Маргарита (490 руб)</option>
+                    <option value="Сет 'Вечерний'">Сет 'Вечерний' (1290 руб)</option>
+                </select>
+                <div class="error-msg" id="productError"></div>
+            </div>
+
+            <div class="input-group">
+                <label>Количество *</label>
+                <input type="number" id="quantity" min="1" max="20" placeholder="1">
+                <div class="error-msg" id="quantityError"></div>
+            </div>
+
+            <div class="input-group">
+                <label>Адрес доставки *</label>
+                <textarea id="address" rows="2" placeholder="Улица, дом, квартира"></textarea>
+                <div class="error-msg" id="addressError"></div>
+            </div>
+
+            <button type="button" id="submitOrderBtn" class="primary">Оформить заказ</button>
+        </form>
+
+        <div id="orderDisplayBlock" class="order-summary" style="display: none;">
+            <h4>Ваш заказ</h4>
+            <div id="orderDetails"></div>
+        </div>
+
+        <div id="surpriseBox" class="hidden-box">
+            Секретная скидка: кликни меня!
+        </div>
+        <button id="toggleSurpriseBtn" class="toggle-visibility-btn">Спрятать/Показать сюрприз</button>
+    </div>
+
+    <!-- БЛОК 2: Форма заказа обратного звонка -->
+    <div class="card" id="callbackCard">
+        <h2>Заказ обратного звонка</h2>
+        <form id="callbackForm">
+            <div class="input-group">
+                <label>Имя *</label>
+                <input type="text" id="callbackFirstName" placeholder="Иван" required pattern="[A-Za-zА-Яа-яЁё]{2,}" title="Только буквы, минимум 2 символа">
+            </div>
+            <div class="input-group">
+                <label>Фамилия *</label>
+                <input type="text" id="callbackLastName" placeholder="Иванов" required pattern="[A-Za-zА-Яа-яЁё]{2,}" title="Только буквы, минимум 2 символа">
+            </div>
+            <div class="input-group">
+                <label>Телефон *</label>
+                <input type="tel" id="callbackPhone" placeholder="123-456-789" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" title="Формат: 123-456-789">
+                <div class="callback-note">Формат: 123-456-789</div>
+            </div>
+            <div class="input-group">
+                <label>Удобная дата и время *</label>
+                <input type="datetime-local" id="callbackDateTime" required>
+            </div>
+            <div class="input-group">
+                <label>Количество человек</label>
+                <input type="number" id="callbackQuantity" min="1" max="10" value="1">
+            </div>
+            <div class="input-group">
+                <label>Способ оплаты *</label>
+                <select id="callbackPayment" required>
+                    <option value="">Выберите способ</option>
+                    <option value="Cash">Наличные</option>
+                    <option value="Card">Карта</option>
+                    <option value="Online">Онлайн перевод</option>
+                </select>
+            </div>
+            <button type="submit" id="sendCallbackBtn" class="primary">Отправить заявку</button>
+        </form>
+        <div class="message" id="callbackMessage">Заполните форму, все поля с * обязательны</div>
+    </div>
+
+    <!-- БЛОК 3: Игра "Угадай число" -->
+    <div class="card">
+        <h2>Угадай число</h2>
+        <div class="difficulty-buttons">
+            <button id="diffEasy">Легкий<br><small>1-10 (7 попыток)</small></button>
+            <button id="diffMedium" class="active-diff">Средний<br><small>1-20 (5 попыток)</small></button>
+            <button id="diffHard">Сложный<br><small>1-50 (4 попытки)</small></button>
+        </div>
+        <div class="input-group">
+            <input type="number" id="guessInput" placeholder="Введите число">
+        </div>
+        <button id="guessBtn" class="primary">Угадать</button>
+        <button id="newGameBtn">Новая игра</button>
+        <div class="message" id="messageBox">Введите число и нажмите "Угадать"</div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
