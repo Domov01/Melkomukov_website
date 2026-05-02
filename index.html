@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>FlexBox — Адаптивная версия с валидацией</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+
+        <div class="logo">
+            <img src="img/logo.png" alt="Логотип компании">
+        </div>
+
+        <div class="wrapper">
+            <div class="offer">
+                <h1 class="title">
+                    С помощью нас вы можете создать то, о чем<br>
+                    <span class="title__span">ЖЕЛАЕТЕ!</span>
+                </h1>
+
+                <p class="offer__text">
+                    Наши возможности + опыт позволят Вам достичь огромного успеха.
+                    Мы верим в вас! И знаем это на все 100%. Вас не остановить!
+                </p>
+
+                <a href="#" class="btn">Узнать больше...</a>
+            </div>
+
+            <img src="img/header-img.png" class="desktop" alt="Изображение презентации">
+        </div>
+    </div>
+</header>
+
+
+<section class="needs">
+    <div class="container">
+        <h2 class="section-title">Что Вам необходимо?</h2>
+
+        <div class="items">
+            <div class="item" data-card>
+                <img src="img/f3.png" alt="иконка первого блока">
+                <h3>Первый блок</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit!</p>
+            </div>
+
+            <div class="item" data-card>
+                <img src="img/f4.png" alt="иконка второго блока">
+                <h3>Второй блок</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit!</p>
+            </div>
+
+            <div class="item" data-card>
+                <img src="img/f5.png" alt="иконка третьего блока">
+                <h3>Третий блок</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- НОВАЯ ФОРМА: Заказ продукта/услуги (JS валидация) -->
+<section class="form-section order-form-section">
+    <div class="container">
+        <h2 class="section-title">Форма заказа услуги</h2>
+
+        <form class="form" id="orderForm" novalidate>
+            <input type="text" id="orderName" placeholder="Ваше имя *" required>
+            <div class="error-message" id="nameError"></div>
+            
+            <input type="email" id="orderEmail" placeholder="Ваш e-mail *" required>
+            <div class="error-message" id="emailError"></div>
+            
+            <div class="radio-group">
+                <p>Выберите услугу: *</p>
+                <label><input type="radio" name="service" value="Сайт под ключ"> Сайт под ключ</label>
+                <label><input type="radio" name="service" value="Лендинг"> Лендинг</label>
+                <label><input type="radio" name="service" value="Интернет-магазин"> Интернет-магазин</label>
+            </div>
+            <div class="error-message" id="serviceError"></div>
+            
+            <input type="file" id="orderFile" accept=".pdf,.doc,.docx,.txt">
+            <div class="error-message" id="fileError"></div>
+            
+            <button type="submit">Отправить заказ</button>
+        </form>
+        
+        <!-- Блок для вывода данных из новой формы -->
+        <div class="order-result" id="orderResult" style="display: none;">
+            <h3>Данные вашего заказа:</h3>
+            <p id="resultContent"></p>
+        </div>
+    </div>
+</section>
+
+<!-- СТАРАЯ ФОРМА: Обратный звонок (HTML5 валидация) -->
+<section class="form-section">
+    <div class="container">
+        <h2 class="section-title">Форма заказа обратного звонка</h2>
+
+        <form class="form" id="callbackForm" action="#" method="post">
+            <input type="text" placeholder="Имя" required>
+            <input type="email" placeholder="Введите свой e-mail" required>
+            <input type="tel" id="phoneInput" placeholder="Телефон">
+            <input type="text" placeholder="Какая тема Вас интересует?">
+
+            <button type="submit">Отправить вопрос</button>
+        </form>
+    </div>
+</section>
+
+
+<footer class="footer">
+    <p>© Все на этом сайте защищено</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
